@@ -2,13 +2,7 @@
 fhand = open('bodyguards.txt')
 inp = fhand.read()
 
-'''function to convert string into list'''
-def Convert(string):
-    list1=[]
-    list1[:0]=string
-    return list1
-
-new_txt = Convert(inp)
+new_txt = list(inp)
 i = 0
 upper_count = 0
 final= []
@@ -29,19 +23,13 @@ while i < len(new_txt):
                     break
                 j+=1
             if after_upper == 3 and upper_count == 3:
-                #print(new_txt[i-4:i+4])
-                
                 final.append(new_txt[i])
             after_upper = 0
         upper_count = 0
     i += 1
 
-final_txt = ""
 
-'''convert list to a string'''
-for x in final:
-    final_txt += x
-print(final_txt)
+print("".join(final))
 
 
 '''Recommended solution - simple using regex'''

@@ -7,12 +7,12 @@ from collections import Counter
 '''A Counter is a dict subclass for counting hashable objects'''
 
 c = Counter(inp)
-counts = 0
-for key in c:
-    if c[key] == 1:
-        counts +=1
+#print(c)
 
-print(c.most_common()[-1*(counts):])
+for key in c:
+    if c[key] == c.most_common()[-1][1]:
+        print(c[key],key)
+
 
 '''Another solution'''
 '''
